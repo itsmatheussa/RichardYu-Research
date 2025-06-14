@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Digital Content Transformation | StrategyPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #2D2D2D;
+            overflow-x: hidden;
+            background: #F8FAFC;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            transition: all 0.4s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FF3EA5;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2D2D2D;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #FF3EA5;
+            transform: translateY(-2px);
+            display: inline-block;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(145deg, #FFF1F8 0%, #FFFFFF 100%);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+        }
+
+        .hero-text .highlight {
+            color: #FF3EA5;
+            background: linear-gradient(180deg, rgba(255, 62, 165, 0.2) 50%, transparent 50%);
+            padding: 0 0.3rem;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: #4A4A4A;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg, #FF3EA5, #FF6BC4);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 62, 165, 0.3);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(90deg, #FF1493, #FF4AB2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 62, 165, 0.4);
+        }
+
+        /* Phone Mockup */
+        .phone-mockup {
+            perspective: 1200px;
+            transform-style: preserve-3d;
+            position: relative;
+            transition: transform 0.1s ease-out;
+        }
+
+        .phone {
+            width: 320px;
+            height: 640px;
+            background: #1A1A1A;
+            border-radius: 40px;
+            padding: 12px;
+            margin: 0 auto;
+            transition: transform 0.4s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .phone:hover {
+            transform: rotateY(15deg) rotateX(8deg) scale(1.02);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #FFFFFF;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .instagram-header {
+            background: #FFFFFF;
+            padding: 16px;
+            border-bottom: 1px solid #E9ECEF;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .profile-pic {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #FF3EA5, #FF1493);
+            box-shadow: 0 2px 8px rgba(255, 62, 165, 0.2);
+        }
+
+        .profile-info h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1A1A1A;
+        }
+
+        .profile-info p {
+            font-size: 13px;
+            color: #6B7280;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            padding: 12px;
+        }
+
+        .post {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #FF8AC5, #FFC1CC);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: white;
+            font-weight: 600;
+            animation: float 4s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .post:hover {
+            transform: scale(1.05);
+        }
+
+        .post:nth-child(2) { animation-delay: 0.6s; }
+        .post:nth-child(3) { animation-delay: 1.2s; }
+        .post:nth-child(4) { animation-delay: 1.8s; }
+        .post:nth-child(5) { animation-delay: 2.4s; }
+        .post:nth-child(6) { animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Process Section */
+        .process {
+            padding: 6rem 0;
+            background: #FFFFFF;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #FF3EA5, #FF6BC4);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #6B7280;
+            margin-bottom: 4rem;
+            display: block;
+            font-weight: 400;
+        }
+
+        .process-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .process-card {
+            background: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(40px);
+            border-top: 5px solid #FF3EA5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 62, 165, 0.05), transparent);
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+
+        .process-card:hover:before {
+            opacity: 1;
+        }
+
+        .process-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .process-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 40px rgba(255, 62, 165, 0.2);
+        }
+
+        .card-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #FF3EA5, #FF1493);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 62, 165, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .process-card:hover .card-icon {
+            transform: scale(1.1);
+        }
+
+        .process-card h3 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 1.2rem;
+            color: #1A1A1A;
+        }
+
+        .process-card p {
+            color: #4A4A4A;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Mistakes Section */
+        .mistakes {
+            padding: 6rem 0;
+            background: linear-gradient(145deg, #FFF1F8 0%, #FFFFFF 100%);
+            position: relative;
+        }
+
+        .mistakes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .mistake-card {
+            background: #FFFFFF;
+            padding: 2.25rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .mistake-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mistake-card:hover {
+            border-color: #FF3EA5;
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 62, 165, 0.15);
+        }
+
+        .mistake-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.2rem;
+            color: #FF3EA5;
+            transition: transform 0.3s ease;
+        }
+
+        .mistake-card:hover .mistake-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .mistake-card h4 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1A1A1A;
+        }
+
+        .mistake-card p {
+            color: #4A4A4A;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .solution {
+            background: linear-gradient(90deg, #FF8AC5, #FFC1CC);
+            color: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-top: 1.2rem;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.4s ease;
+            font-size: 0.95rem;
+        }
+
+        .mistake-card:hover .solution {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Analysis Section */
+        .analysis {
+            padding: 7rem 0;
+            background: linear-gradient(145deg, #FFF1F8 0%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analysis:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(255, 62, 165, 0.1), transparent 70%);
+            opacity: 0.5;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat-box {
+            flex: 1;
+            min-width: 240px;
+            background: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(255, 62, 165, 0.1);
+            text-align: center;
+            border-top: 5px solid #FF3ea5;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 62, 165, 0.08), transparent);
+            transition: all 0.4s ease;
+        }
+
+        .stat-box:hover:before {
+            left: 0;
+        }
+
+        .stat-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(255, 62, 165, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #FF1493;
+            margin-bottom: 1rem;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: #4A4A4A;
+            font-size: 1.1rem;
+            font-weight: medium;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .analysis-card {
+            background: #FFFFFF;
+            padding: 3.5rem;
+            border-radius: 28px;
+            box-shadow: 0 10px 40px rgba(255, 62, 165, 0.1);
+            border-left: 6px solid #FF3EA5;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analysis-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 62, 165, 0.05), transparent);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .analysis-card:hover:before {
+            opacity: 1;
+        }
+
+        .analysis-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .analysis-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 50px rgba(255, 62, 165, 0.25);
+        }
+
+        .analysis-card h3 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #FF1493;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .analysis-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #FF3EA5, #FF6BC4);
+            border-radius: 3px;
+        }
+
+        .analysis-card p {
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            color: #4A4A4A;
+            font-size: 1.15rem;
+        }
+
+        .analysis-card ul {
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .analysis-card li {
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-left: 35px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .analysis-card li:before {
+            content: '→';
+            color: #FF3EA5;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .analysis-card li:hover:before {
+            transform: translateX(5px);
+        }
+
+        .highlight {
+            background: linear-gradient(90deg, #FFF1F8, #FFD1DC);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #D23369;
+            display: inline;
+            box-shadow: 0 2px 8px rgba(255, 62, 165, 0.1);
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #FFF1F8, #FFD1DC);
+            border-radius: 16px;
+            position: relative;
+            margin: 2.5rem 0;
+            color: #D23369;
+            font-weight: medium;
+            box-shadow: 0 6px 20px rgba(255, 62, 165, 0.15);
+        }
+
+        .quote:before {
+            content: '"';
+            font-size: 6rem;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            color: rgba(255, 62, 165, 0.2);
+            font-family: serif;
+        }
+
+        /* Roadmap Section */
+        .roadmap {
+            position: relative;
+            background: linear-gradient(135deg, #FFF1F8 0%, #FFFFFF 100%);
+            overflow: hidden;
+        }
+
+        .roadmap:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 62, 165, 0.08), transparent 70%);
+            z-index: 0;
+        }
+
+        .geometric-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hexagon {
+            position: absolute;
+            width: 100px;
+            height: 57.74px;
+            background: linear-gradient(135deg, rgba(255, 62, 165, 0.1), rgba(255, 107, 196, 0.05));
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            animation: float 12s infinite ease-in-out;
+        }
+
+        .hexagon-1 {
+            top: 10%;
+            right: 15%;
+            width: 150px;
+            height: 86.61px;
+            animation-delay: -2s;
+        }
+
+        .hexagon-2 {
+            bottom: 20%;
+            left: 10%;
+            width: 120px;
+            height: 69.28px;
+            animation-delay: -5s;
+        }
+
+        .hexagon-3 {
+            top: 60%;
+            right: 25%;
+            width: 80px;
+            height: 46.19px;
+            animation-delay: -8s;
+            opacity: 0.7;
+        }
+
+        .phase-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .phase-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .phase-text {
+            width: 55%;
+            padding: 0 100px 0 60px;
+        }
+
+        .phase-visual {
+            width: 45%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phase-title-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #FF3EA5, #FF6BC4);
+            margin-bottom: 30px;
+            transform: scaleX(0);
+            transform-origin: left;
+            opacity: 0;
+            animation: slideIn 1.2s ease-out forwards 0.3s;
+        }
+
+        .phase-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #FF3EA5, #FF6BC4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease-out forwards 0.5s;
+        }
+
+        .phase-subtitle {
+            font-size: 1.3rem;
+            color: #6B7280;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1s ease-out forwards 0.7s;
+        }
+
+        .phase-details {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(255, 62, 165, 0.08);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease-out forwards 0.9s;
+        }
+
+        .phase-details ul {
+            margin-left: 20px;
+            list-style: none;
+        }
+
+        .phase-details li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #4A4A4A;
+            line-height: 1.8;
+            transition: all 0.3s ease;
+        }
+
+        .phase-details li:hover {
+            color: #FF3EA5;
+        }
+
+        .phase-details li:before {
+            content: '✦';
+            color: #FF3EA5;
+            font-size: 1rem;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .phase-details li:hover:before {
+            transform: translateX(5px);
+        }
+
+        /* Phase 1: Stylized Reels Animation */
+        .mobile-visual {
+            position: relative;
+            width: 260px;
+            height: 520px;
+            background: #1A1A1A;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            animation: pulse 6s infinite ease-in-out;
+        }
+
+        .mobile-screen {
+            width: 100%;
+            height: 100%;
+            background: #FFFFFF;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reels-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400%;
+            display: flex;
+            flex-direction: column;
+            animation: scroll-reels 24s linear infinite;
+        }
+
+        .reel {
+            width: 100%;
+            height: 25%;
+            position: relative;
+            background: #FFF1F8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 2px solid #FF3EA5;
+            transition: transform 0.3s ease;
+        }
+
+        .reel:hover {
+            transform: scale(1.05);
+        }
+
+        .reel svg {
+            width: 80%;
+            height: 80%;
+        }
+
+        .reel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px;
+        }
+
+        .reel-username {
+            color: #1A1A1A;
+            font-size: 14px;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(255, 62, 165, 0.3);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .reel-play {
+            width: 40px;
+            height: 40px;
+            background: #FF3EA5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            border: 2px solid white;
+            transition: transform 0.3s ease;
+        }
+
+        .reel:hover .reel-play {
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll-reels {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-75%); }
+        }
+
+        /* SVG Animations */
+        .cooking-arm {
+            transform-origin: 90px 40px;
+            animation: stir 1.5s ease-in-out infinite;
+        }
+
+        @keyframes stir {
+            0%, 100% { transform: rotate(-10deg) scale(1); }
+            50% { transform: rotate(10deg) scale(1.05); }
+        }
+
+        .weight {
+            transform-origin: center;
+            animation: lift 1.2s ease-in-out infinite;
+        }
+
+        @keyframes lift {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .pushup-body {
+            transform-origin: center 150px;
+            animation: pushup 1.2s ease-in-out infinite;
+        }
+
+        @keyframes pushup {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        .pushup-arm {
+            transform-origin: 80px 140px;
+            animation: bend-arm 1.2s ease-in-out infinite;
+        }
+
+        @keyframes bend-arm {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-10deg); }
+        }
+
+        .typing-hands {
+            animation: type 0.8s ease-in-out infinite;
+        }
+
+        @keyframes type {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(2px); }
+        }
+
+        .screen-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* Phase 2: Rocket Animation */
+        .rocket-visual {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 6s infinite ease-in-out;
+        }
+
+        .rocket-svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotate 30s linear infinite;
+        }
+
+        .rocket-core {
+            width: 120px;
+            height: 120px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(255, 62, 165, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .rocket-icon {
+            font-size: 2.5rem;
+            color: #FF3EA5;
+            filter: drop-shadow(0 0 10px rgba(255, 62, 165, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .rocket-flame {
+            position: absolute;
+            bottom: -40px;
+            width: 40px;
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60"><path d="M20 0 C10 20, 10 40, 20 60 C30 40, 30 20, 20 0" fill="url(#flameGradient)"/></svg>');
+            background-size: cover;
+            animation: flicker 0.1s ease-in-out infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { transform: scaleY(1); opacity: 0.8; }
+            50% { transform: scaleY(1.2); opacity: 1; }
+        }
+
+        .rocket-visual:hover .rocket-core {
+            transform: scale(1.1);
+        }
+
+        .rocket-visual:hover .rocket-icon {
+            transform: rotate(10deg);
+        }
+
+        /* Phase 3: Funnel Animation */
+        .funnel-visual {
+            position: relative;
+            width: 300px;
+            height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 6s infinite ease-in-out;
+            transition: transform 0.3s ease;
+        }
+
+        .funnel-visual:hover {
+            transform: scale(1.05);
+        }
+
+        .funnel-svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .funnel-layer {
+            fill: url(#funnel-gradient);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .funnel-visual:hover .funnel-layer {
+            opacity: 1;
+        }
+
+        .funnel-users {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .funnel-user {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            animation: flowUsers 4s ease-in-out infinite;
+        }
+
+        .user-1 { top: 20px; animation-delay: 0s; }
+        .user-2 { top: 20px; animation-delay: 0.8s; }
+        .user-3 { top: 20px; animation-delay: 1.6s; }
+
+        .funnel-visual:hover .funnel-user {
+            animation-duration: 2s;
+        }
+
+        @keyframes flowUsers {
+            0% { transform: translateX(-50%) translateY(0); scale(1); opacity: 1; }
+            50% { transform: translateX(-50%) translateY(150px); scale(0.75); opacity: 0.7; }
+            100% { transform: translateX(-50%) translateY(300px); scale(0.5); opacity: 0.3; }
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 8rem 0;
+            background: linear-gradient(145deg, #FFF1F8 0%, #FFFFFF 100%);
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .final-cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 62, 165, 0.1), transparent 70%);
+            opacity: 0.5;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 3.2rem;
+            font-weight: bold;
+            color: #1A1A1A;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .final-cta h2.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            color: #4A4A4A;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .final-cta p.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .document-button {
+            background: linear-gradient(90deg, #FF3EA5, #FF6BC4);
+            color: white;
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 6px 20px rgba(255, 62, 165, 0.4);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease 0.4s;
+        }
+
+        .document-button.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .document-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .document-button:hover:before {
+            left: 100%;
+        }
+
+        .document-button:hover {
+            background: linear-gradient(90deg, #FF1493, #FF4AB2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 62, 165, 0.5);
+        }
+
+        .document-button i {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .document-button:hover i {
+            transform: translateX(5px);
+        }
+
+        .features-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease 0.6s;
+        }
+
+        .features-preview.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 62, 165, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 62, 165, 0.15);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: #FF3EA5;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1A1A1A;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #6B7280;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2D2D2D, #1A1A1A);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(255, 62, 165, 0.1), transparent 70%);
+            opacity: 0.5;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease 0.2s;
+        }
+
+        footer p.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+
+            .phone {
+                width: 280px;
+                height: 560px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .stat-box {
+                min-width: 100%;
+                padding: 2rem;
+            }
+
+            .analysis-card {
+                padding: 2.5rem;
+            }
+
+            .phase-section {
+                padding: 6rem 0;
+            }
+
+            .phase-content {
+                flex-direction: column;
+            }
+
+            .phase-text {
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .phase-visual {
+                width: 100%;
+                margin-top: 50px;
+            }
+
+            .phase-title {
+                font-size: 2.5rem;
+            }
+
+            .phase-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .phase-details {
+                padding: 20px;
+            }
+
+            .phase-details li {
+                font-size: 0.95rem;
+            }
+
+            .mobile-visual {
+                width: 220px;
+                height: 440px;
+            }
+
+            .reel-username {
+                font-size: 12px;
+            }
+
+            .reel-play {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+
+            .rocket-visual {
+                width: 260px;
+                height: 260px;
+            }
+
+            .rocket-core {
+                width: 100px;
+                height: 100px;
+            }
+
+            .rocket-icon {
+                font-size: 2rem;
+            }
+
+            .rocket-flame {
+                bottom: -30px;
+                width: 32px;
+                height: 48px;
+            }
+
+            .funnel-visual {
+                width: 250px;
+                height: 300px;
+            }
+
+            .funnel-user {
+                width: 10px;
+                height: 10px;
+            }
+
+            @keyframes flowUsers {
+                0% { transform: translateX(-50%) translateY(0); scale(1); opacity: 1; }
+                50% { transform: translateX(-50%) translateY(125px); scale(0.75); opacity: 0.7; }
+                100% { transform: translateX(-50%) translateY(250px); scale(0.5); opacity: 0.3; }
+            }
+
+            .hexagon-1 {
+                width: 120px;
+                height: 69.28px;
+            }
+
+            .hexagon-2 {
+                width: 100px;
+                height: 57.74px;
+            }
+
+            .hexagon-3 {
+                width: 60px;
+                height: 34.64px;
+            }
+
+            .final-cta {
+                padding: 6rem 0;
+            }
+
+            .final-cta h2 {
+                font-size: 2.5rem;
+            }
+
+            .final-cta p {
+                font-size: 1.2rem;
+            }
+
+            .document-button {
+                padding: 1.2rem 2rem;
+                font-size: 1rem;
+            }
+
+            .features-preview {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); rotate(0deg); }
+            50% { transform: translateY(-15px); rotate(2deg); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { transform: scaleX(0); opacity: 0; }
+            to { transform: scaleX(1); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.03); opacity: 1; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered Animations */
+        .process-card:nth-child(1) { transition-delay: 0.1s; }
+        .process-card:nth-child(2) { transition-delay: 0.2s; }
+        .process-card:nth-child(3) { transition-delay: 0.3s; }
+        .process-card:nth-child(4) { transition-delay: 0.4s; }
+
+        .mistake-card:nth-child(1) { transition-delay: 0.1s; }
+        .mistake-card:nth-child(2) { transition-delay: 0.2s; }
+        .mistake-card:nth-child(3) { transition-delay: 0.3s; }
+        .mistake-card:nth-child(4) { transition-delay: 0.4s; }
+
+        .analysis-card:nth-child(1) { transition-delay: 0.1s; }
+        .analysis-card:nth-child(2) { transition-delay: 0.2s; }
+        .analysis-card:nth-child(3) { transition-delay: 0.3s; }
+        .analysis-card:nth-child(4) { transition-delay: 0.4s; }
+
+        .stat-box:nth-child(1) { transition-delay: 0.1s; }
+        .stat-box:nth-child(2) { transition-delay: 0.2s; }
+        .stat-box:nth-child(3) { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Strategy</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#mistakes">Mistakes</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#document">Data</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Strategic <span class="highlight">Digital Content</span>—Analysis & Optimization!</h1>
+                    <p>In-depth analysis of the current digital strategy and a robust action plan to optimize engagement, branding, and sales funnel.</p>
+                    <a href="#document" class="cta-button">Get The Full Data</a>
+                </div>
+                <div class="phone-mockup" id="phoneMockup">
+                    <div class="phone">
+                        <div class="phone-screen">
+                            <div class="instagram-header">
+                                <div class="profile-pic"></div>
+                                <div class="profile-info">
+                                    <h3>@richardyuzee</h3>
+                                    <p>Digital Marketing Expert</p>
+                                </div>
+                            </div>
+                            <div class="posts-grid">
+                                <div class="post">Value</div>
+                                <div class="post">Engage</div>
+                                <div class="post">Convert</div>
+                                <div class="post">Growth</div>
+                                <div class="post">Strategy</div>
+                                <div class="post">Results</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title fade-in">Summary</h2>
+            <span class="section-subtitle fade-in">Overview of Content and Presentation Structure</span>
+            <div class="process-cards">
+                <div class="process-card fade-in">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>1. Audience Analysis</h3>
+                    <p>Deep dive into your audience psychology, identifying what truly resonates and drives engagement beyond surface-level metrics.</p>
+                </div>
+                <div class="process-card fade-in">
+                    <div class="card-icon"><i class="fas fa-edit"></i></div>
+                    <h3>2. Content Optimization</h3>
+                    <p>Deep dive into your content strategy, using proven data and strategies like hooks, pacing techniques, and value-first approaches that interrupt the scroll.</p>
+                </div>
+                <div class="process-card fade-in">
+                    <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>3. Engagement Strategy</h3>
+                    <p>Build an authentic content strategy through storytelling and community building that turns followers into brand advocates.</p>
+                </div>
+                <div class="process-card fade-in">
+                    <div class="card-icon"><i class="fas fa-funnel-dollar"></i></div>
+                    <h3>4. Conversion Funnel</h3>
+                    <p>Created a sophisticated sales funnel that feels natural and builds trust while maximizing conversion rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mistakes" class="mistakes">
+        <div class="container">
+            <h2 class="section-title fade-in">Content Strategy Mistakes</h2>
+            <span class="section-subtitle fade-in">Avoid these pitfalls that sabotage most creators</span>
+            <div class="mistakes-grid">
+                <div class="mistake-card">
+                    <div class="mistake-icon">❌</div>
+                    <h4>Constant Sales Links</h4>
+                    <p>Having permanent sales links kills exclusivity and makes you look like just another course seller.</p>
+                    <div class="solution">
+                        <strong>Solution:</strong> Create scarcity and surprise with strategic, timed offers that feel exclusive.
+                    </div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-icon">📸</div>
+                    <h4>Diluted Personal Brand</h4>
+                    <p>Using others' photos instead of your own weakens the personal connection with your audience.</p>
+                    <div class="solution">
+                        <strong>Solution:</strong> Focus on your personal story and image to build stronger parasocial relationships.
+                    </div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-icon">📢</div>
+                    <h4>Over-Promotion</h4>
+                    <p>Every post being a sales pitch creates audience fatigue and algorithm penalties.</p>
+                    <div class="solution">
+                        <strong>Solution:</strong> Follow the 80/20 rule: 80% value content, 20% strategic promotion.
+                    </div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-icon">⏳</div>
+                    <h4>Slow Video Pacing</h4>
+                    <p>Slow starts and weak hooks fail to interrupt the endless scroll behavior.</p>
+                    <div class="solution">
+                        <strong>Solution:</strong> Master Corrosion 16px solid #FF3EA5 the 3-second rule with compelling hooks and dynamic pacing.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="analysis" class="analysis">
+        <div class="container">
+            <h2 class="section-title fade-in">Strategic Content Analysis</h2>
+            <span class="section-subtitle fade-in">Data-driven insights to transform your digital presence</span>
+            
+            <div class="stats fade-in">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="89">0%</div>
+                    <div class="stat-label">of content fails to engage</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="3">0s</div>
+                    <div class="stat-label">to capture attention</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="5">0x</div>
+                    <div class="stat-label">better conversion with strategy</div>
+                </div>
+            </div>
+
+            <div class="analysis-grid">
+                <div class="analysis-card fade-in">
+                    <h3>The Exclusivity Paradox in Bio Links</h3>
+                    <p>The persistent presence of sales links in your bio creates a psychological paradox. While intended to drive conversions, it actually <span class="highlight">diminishes perceived value</span> by eliminating the crucial elements of scarcity and surprise.</p>
+                    
+                    <div class="quote">
+                        "Constant availability trains your audience to devalue your offers. Scarcity triggers urgency, while surprise creates delight."
+                    </div>
+                    
+                    <p>Behavioral psychology research by <span class="highlight">Robert Cialdini</span> demonstrates that exclusivity increases perceived value by up to 300%. Your current approach inadvertently positions you as just another seller in an oversaturated market.</p>
+                    
+                    <ul>
+                        <li><strong>Algorithm impact:</strong> Platforms deprioritize content perceived as overly commercial</li>
+                        <li><strong>Audience fatigue:</strong> 72% of users report ad avoidance behaviors</li>
+                        <li><strong>Conversion penalty:</strong> Constant CTAs reduce their effectiveness by up to 40%</li>
+                    </ul>
+                </div>
+                
+                <div class="analysis-card fade-in">
+                    <h3>The Brand Dilution Effect</h3>
+                    <p>Using third-party imagery insteadCTO of your own creates a <span class="highlight">disconnect with your audience</span> that undermines the parasocial relationships essential for creating a connection with the public.</p>
+                    
+                    <p>Neuroimaging studies show that the brain processes personal branding content differently:</p>
+                    
+                    <ul>
+                        <li><strong>Increased activation</strong> in mirror neuron systems when viewing authentic personal content</li>
+                        <li><strong>Higher retention rates</strong> for content featuring the creator's face (63% vs 27%)</li>
+                        <li><strong>Stronger emotional connection</strong> measured through galvanic skin response</li>
+                    </ul>
+                    
+                    <p>Your personal story is your most valuable asset. The current approach sacrifices this advantage by diluting your visual identity.</p>
+                </div>
+                
+                <div class="analysis-card fade-in">
+                    <h3>The Engagement-Sales Balance</h3>
+                    <p>Our data reveals your content currently operates at a <span class="highlight">4:1 promotion-to-value ratio</span>, triggering algorithm penalties and audience disengagement.</p>
+                    
+                    <div class="quote">
+                        "People don't buy from content they like - they like content that helps them, then buy from those they trust."
+                    </div>
+                    
+                    <p>The optimal content mix follows these psychological principles:</p>
+                    
+                    <ul>
+                        <li><strong>80/20 Rule:</strong> 80% pure value, 20% strategic offers</li>
+                        <li><strong>Reciprocity Principle:</strong> Deliver 3-5 value pieces before any ask</li>
+                        <li><strong>Social Proof:</strong> Showcase results before making offers</li>
+                    </ul>
+                </div>
+                
+                <div class="analysis-card fade-in">
+                    <h3>Video Performance Optimization</h3>
+                    <p>Current video content misses <span class="highlight">4 crucial attention triggers</span> needed to interrupt doomscrolling behavior:</p>
+                    
+                    <ul>
+                        <li><strong>3-Second Hook:</strong> Missing visual/textual interrupters in opening frames</li>
+                        <li><strong>Pacing Gaps:</strong> 1.7 seconds average shot length vs optimal 0.25 seconds</li>
+                        <li><strong>Value Clarity:</strong> Core benefit appears at 8 seconds vs ideal 3 seconds</li>
+                        <li><strong>Retention Loops:</strong> Underutilized end screens and CTAs</li>
+                    </ul>
+                    
+                    <p>Neuroscience shows these elements trigger dopamine release that sustains attention. Our proposed edits can increase average watch time by 2-3x.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="roadmap">
+        <div class="geometric-shapes">
+            <div class="hexagon hexagon-1"></div>
+            <div class="hexagon hexagon-2"></div>
+            <div class="hexagon hexagon-3"></div>
+        </div>
+
+        <!-- Phase 1 -->
+        <div class="phase-section">
+            <div class="container">
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <div class="phase-title-line"></div>
+                        <h2 class="phase-title">Phase 1: Foundation Building</h2>
+                        <div class="phase-subtitle">Weeks 1-8</div>
+                        <div class="phase-details">
+                            Reset audience perception and establish authority through value-first content
+                            <ul>
+                                <li><strong>Content Reinvention:</strong> Replace sales link with value proposition and rotating "surprise" offers; 100% personal imagery with consistent styling; Establish 3 core themes (Education, Inspiration, Transformation)</li>
+                                <li><strong>Video Production Framework:</strong> Develop 20 proven opening hooks; Implement 0.8s shot pacing standard; Add loop endings and engagement triggers</li>
+                                <li><strong>Engagement System:</strong> Daily value bursts with interactive elements; Initiate "inner circle" with top engagers; Strategic posting times based on analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="phase-visual">
+                        <div class="mobile-visual">
+                            <div class="mobile-screen">
+                                <div class="reels-container">
+                                    <!-- Reel 1: Cooking -->
+                                    <div class="reel">
+                                        <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Character Body -->
+                                            <rect x="80" y="120" width="40" height="100" fill="#FFD1DC" rx="10"/>
+                                            <!-- Head -->
+                                            <circle cx="100" cy="100" r="20" fill="#FFD1DC"/>
+                                            <!-- Pan -->
+                                            <rect x="70" y="160" width="60" height="40" fill="#D23369" rx="5"/>
+                                            <!-- Pan Handle -->
+                                            <rect x="130" y="170" width="20" height="10" fill="#D23369"/>
+                                            <!-- Steam Lines -->
+                                            <path d="M90 130 V120 Q95 115 100 120 T110 120 V130" fill="none" stroke="#FF3EA5" stroke-width="2" opacity="0.5"/>
+                                            <!-- Spoon -->
+                                            <path d="M90 140 L110 160" stroke="#FF3EA5" stroke-width="5" class="cooking-arm"/>
+                                            <div class="reel-overlay">
+                                                <span class="reel-username">@richardyuzee</span>
+                                                <div class="reel-play"><i class="fas fa-play"></i></div>
+                                            </div>
+                                        </svg>
+                                    </div>
+                                    <!-- Reel 2: Training -->
+                                    <div class="reel">
+                                        <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Character Body -->
+                                            <rect x="80" y="120" width="40" height="100" fill="#FFD1DC" rx="10"/>
+                                            <!-- Head -->
+                                            <circle cx="100" cy="100" r="20" fill="#FFD1DC"/>
+                                            <!-- Weights -->
+                                            <circle cx="60" cy="160" r="8" fill="#FF3EA5" class="weight"/>
+                                            <circle cx="140" cy="160" r="8" fill="#FF3EA5" class="weight"/>
+                                            <!-- Barbell -->
+                                            <rect x="50" y="158" width="100" height="4" fill="#D23369"/>
+                                            <div class="reel-overlay">
+                                                <span class="reel-username">@richardyuzee</span>
+                                                <div class="reel-play"><i class="fas fa-play"></i></div>
+                                            </div>
+                                        </svg>
+                                    </div>
+                                    <!-- Reel 3: Push-Ups -->
+                                    <div class="reel">
+                                        <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Ground -->
+                                            <rect x="50" y="220" width="100" height="5" fill="#D23369"/>
+                                            <!-- Character Body -->
+                                            <rect x="80" y="140" width="40" height="80" fill="#FFD1DC" rx="1" class="pushup-body"/>
+                                            <!-- Head -->
+                                            <circle cx="100" cy="120" r="15" fill="#FFD1DC"/>
+                                            <!-- Arms -->
+                                            <path d="M80 140 L70 220" stroke="#FFD1DC" stroke-width="10" class="pushup-arm"/>
+                                            <path d="M120 140 L130 220" stroke="#FFD1DC" stroke-width="10" class="pushup-arm"/>
+                                            <div class="reel-overlay">
+                                                <span class="reel-username">@richardyuzee</span>
+                                                <div class="reel-play"><i class="fas fa-play"></i></div>
+                                            </div>
+                                        </svg>
+                                    </div>
+                                    <!-- Reel 4: Laptop -->
+                                    <div class="reel">
+                                        <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Desk -->
+                                            <rect x="50" y="200" width="100" height="10" fill="#D23369"/>
+                                            <!-- Character Body -->
+                                            <rect x="80" y="140" width="40" height="60" fill="#FFD1DC" rx="10"/>
+                                            <!-- Head -->
+                                            <circle cx="100" cy="120" r="15" fill="#FFD1DC"/>
+                                            <!-- Laptop -->
+                                            <rect x="60" y="160" width="80" height="40" fill="#D23369" rx="5"/>
+                                            <!-- Screen -->
+                                            <rect x="65" y="165" width="70" height="30" fill="#FFF1F8" class="screen-glow"/>
+                                            <!-- Hands -->
+                                            <rect x="70" y="200" width="60" height="5" fill="#FFD1DC" class="typing-hands"/>
+                                            <div class="reel-overlay">
+                                                <span class="reel-username">@richardyuzee</span>
+                                                <div class="reel-play"><i class="fas fa-play"></i></div>
+                                            </div>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="phase-section">
+            <div class="container">
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <div class="phase-title-line"></div>
+                        <h2 class="phase-title">Phase 2: Audience Expansion</h2>
+                        <div class="phase-subtitle">Weeks 9-16</div>
+                        <div class="phase-details">
+                            Scale reach while nurturing psychological buy-in
+                            <ul>
+                                <li><strong>Growth Accelerators:</strong> Guest appearances on 3-5 niche podcasts; Develop "clip bank" for viral redistribution; Empower advocates to share organically</li>
+                                <li><strong>Psychological Positioning:</strong> Content series on emerging industry challenges; Gradual reveal of methodology; Limited-time "beta" opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="phase-visual">
+                        <div class="rocket-visual">
+                            <svg class="rocket-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M160,160 m-140,0 a140,140 0 1,1 280,0 a140,140 0 1,1 -280,0" fill="none" stroke="url(#gradient)" stroke-width="4" opacity="0.3"/>
+                                <path d="M160,160 m-120,0 a120,120 0 1,0 240,0 a120,120 0 1,0 -240,0" fill="none" stroke="url(#gradient)" stroke-width="3" opacity="0.5"/>
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FF3EA5;stop-opacity:1"/>
+                                        <stop offset="100%" style="stop-color:#FF6BC4;stop-opacity:1"/>
+                                    </linearGradient>
+                                    <linearGradient id="flameGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FF4500;stop-opacity:1"/>
+                                        <stop offset="50%" style="stop-color:#FFFF00;stop-opacity:1"/>
+                                        <stop offset="100%" style="stop-color:#FF4500;stop-opacity:0.5"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="rocket-core">
+                                <i class="fas fa-rocket rocket-icon"></i>
+                                <div class="rocket-flame"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="phase-section">
+            <div class="container">
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <div class="phase-title-line"></div>
+                        <h2 class="phase-title">Phase 3: Monetization System</h2>
+                        <div class="phase-subtitle">Weeks 17+</div>
+                        <div class="phase-details">
+                            Convert nurtured audience into sustainable revenue
+                            <ul>
+                                <li><strong>Funnel Architecture:</strong> AI Fundamentals Masterclass (lead magnet); Private networking collective; Scaling mentorship program</li>
+                                <li><strong>Conversion Optimization:</strong> Showcase member results; Cohort-based enrollment; Bonus resources at key points</li>
+                                <li><strong>Ecosystem Development:</strong> Student success stories; User-generated materials; New vertical integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="phase-visual">
+                        <div class="funnel-visual">
+                            <svg class="funnel-svg" viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg">
+                                <path class="funnel-layer" d="M20,20 L280,20 L240,120 L60,120 Z"/>
+                                <path class="funnel-layer" d="M60,120 L240,120 L200,240 L100,240 Z"/>
+                                <path class="funnel-layer" d="M100,240 L200,240 L180,340 L120,340 Z"/>
+                                <defs>
+                                    <linearGradient id="funnel-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FF3EA5;stop-opacity:0.9"/>
+                                        <stop offset="100%" style="stop-color:#FF6BC4;stop-opacity:0.7"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="funnel-users">
+                                <svg class="funnel-user user-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 3 A2 2 0 0 1 6 7 A2 2 0 0 1 6 3 M3 8 C3 10 9 10 9 8" fill="#FF3EA5"/>
+                                </svg>
+                                <svg class="funnel-user user-2" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 3 A2 2 0 0 1 6 7 A2 2 0 0 1 6 3 M3 8 C3 10 9 10 9 8" fill="#FF3EA5"/>
+                                </svg>
+                                <svg class="funnel-user user-3" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 3 A2 2 0 0 1 6 7 A2 2 0 0 1 6 3 M3 8 C3 10 9 10 9 8" fill="#FF3EA5"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="document" class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="fade-in">Ready to <span class="highlight">Transform</span> Your Content Strategy?</h2>
+                <p class="fade-in">Get the comprehensive Digital Content Strategy Full Guide with detailed frameworks, templates, and step-by-step implementation plans used by industry leaders.</p>
+                
+                <a href="https://docs.google.com/document/d/14NIxt3zQMkDCIpxrstsxEd1owxLjAG6t6fkwo7GBbXo/edit?usp=sharing" class="document-button fade-in" id="downloadBtn" target="_blank">
+                    <i class="fas fa-download"></i>
+                    See The Complete Strategy Guide
+                </a>
+
+                <div class="features-preview fade-in">
+                    <div class="feature-item">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>12+ Page Guide</h4>
+                        <p>Comprehensive strategies and frameworks for content transformation</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <h4>Analytics Templates</h4>
+                        <p>Ready-to-use templates for tracking and measuring content performance</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h4>Content Strategy</h4>
+                        <p>Strategic planning templates for consistent content scheduling</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <h4>Audience Research</h4>
+                        <p>Tools and methods for understanding your target audience deeply</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <p class="fade-in">© 2025 made by mat.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in, .process-card, .mistake-card, .stat-box, .analysis-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Stat counter animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            const suffix = stat.textContent.replace(/[0-9]/g, '');
+            let current = 0;
+            const increment = Math.ceil(target / 50);
+            
+            const updateStat = () => {
+                current += increment;
+                if (current > target) current = target;
+                stat.textContent = `${current}${suffix}`;
+                if (current < target) requestAnimationFrame(updateStat);
+            };
+
+            const statObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    requestAnimationFrame(updateStat);
+                    statObserver.unobserve(stat);
+                }
+            }, observerOptions);
+            
+            statObserver.observe(stat);
+        });
+    </script>
